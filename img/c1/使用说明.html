@@ -1,0 +1,97 @@
+<h1 id="图片批量转换为WebP格式工具"><a href="#图片批量转换为WebP格式工具" class="headerlink" title="图片批量转换为WebP格式工具"></a>图片批量转换为WebP格式工具</h1><h2 id="🎯-功能说明"><a href="#🎯-功能说明" class="headerlink" title="🎯 功能说明"></a>🎯 功能说明</h2><p>这个工具可以批量转换当前文件夹下的所有图片为WebP格式，支持JPG、PNG、BMP、GIF、TIFF等常见格式。</p>
+<h2 id="📦-包含文件"><a href="#📦-包含文件" class="headerlink" title="📦 包含文件"></a>📦 包含文件</h2><ul>
+<li><code>convert_to_webp.py</code> - Python脚本（推荐）</li>
+<li><code>convert_to_webp.bat</code> - Windows批处理文件</li>
+<li><code>convert_to_webp.ps1</code> - PowerShell脚本</li>
+</ul>
+<h2 id="🚀-使用方法"><a href="#🚀-使用方法" class="headerlink" title="🚀 使用方法"></a>🚀 使用方法</h2><h3 id="方法一：Python脚本（推荐）"><a href="#方法一：Python脚本（推荐）" class="headerlink" title="方法一：Python脚本（推荐）"></a>方法一：Python脚本（推荐）</h3><p>**优点：**无需额外安装软件，质量最高</p>
+<ol>
+<li><p><strong>自动安装依赖并运行：</strong></p>
+<pre><code>双击运行 convert_to_webp.bat
+</code></pre>
+</li>
+<li><p><strong>手动运行：</strong></p>
+<pre><code class="language-bash"># 安装依赖
+pip install Pillow
+
+# 基本转换（保留原文件）
+python convert_to_webp.py
+
+# 指定质量（1-100）
+python convert_to_webp.py -q 90
+
+# 无损压缩
+python convert_to_webp.py -l
+
+# 删除原文件
+python convert_to_webp.py --remove-original
+
+# 指定目录
+python convert_to_webp.py -d &quot;D:\我的图片&quot;
+</code></pre>
+</li>
+</ol>
+<h3 id="方法二：PowerShell脚本"><a href="#方法二：PowerShell脚本" class="headerlink" title="方法二：PowerShell脚本"></a>方法二：PowerShell脚本</h3><p>**优点：**Windows原生支持</p>
+<p>**前提条件：**需要安装FFmpeg</p>
+<pre><code class="language-powershell"># 使用winget安装FFmpeg
+winget install FFmpeg
+
+# 或使用Chocolatey
+choco install ffmpeg
+</code></pre>
+<p><strong>使用方法：</strong></p>
+<pre><code class="language-powershell"># 基本转换
+.\convert_to_webp.ps1
+
+# 指定质量
+.\convert_to_webp.ps1 -Quality 90
+
+# 无损压缩
+.\convert_to_webp.ps1 -Lossless
+
+# 删除原文件
+.\convert_to_webp.ps1 -KeepOriginal:$false
+
+# 指定目录
+.\convert_to_webp.ps1 -InputDir &quot;D:\我的图片&quot;
+</code></pre>
+<h2 id="⚙️-参数说明"><a href="#⚙️-参数说明" class="headerlink" title="⚙️ 参数说明"></a>⚙️ 参数说明</h2><h3 id="Python脚本参数"><a href="#Python脚本参数" class="headerlink" title="Python脚本参数"></a>Python脚本参数</h3><ul>
+<li><code>-d, --directory</code> : 目标目录（默认：当前目录）</li>
+<li><code>-q, --quality</code> : 压缩质量 1-100（默认：85）</li>
+<li><code>-l, --lossless</code> : 使用无损压缩</li>
+<li><code>--remove-original</code> : 删除原始文件</li>
+</ul>
+<h3 id="PowerShell脚本参数"><a href="#PowerShell脚本参数" class="headerlink" title="PowerShell脚本参数"></a>PowerShell脚本参数</h3><ul>
+<li><code>InputDir</code> : 输入目录（默认：当前目录）</li>
+<li><code>Quality</code> : 压缩质量 1-100（默认：85）</li>
+<li><code>Lossless</code> : 使用无损压缩</li>
+<li><code>KeepOriginal</code> : 保留原文件（默认：true）</li>
+</ul>
+<h2 id="📊-支持格式"><a href="#📊-支持格式" class="headerlink" title="📊 支持格式"></a>📊 支持格式</h2><p><strong>输入格式：</strong> JPG, JPEG, PNG, BMP, GIF, TIFF, TIF<br><strong>输出格式：</strong> WebP</p>
+<h2 id="💡-使用建议"><a href="#💡-使用建议" class="headerlink" title="💡 使用建议"></a>💡 使用建议</h2><ol>
+<li><p><strong>质量设置：</strong></p>
+<ul>
+<li>85-95: 高质量，适合重要图片</li>
+<li>70-85: 平衡质量与文件大小</li>
+<li>50-70: 较小文件，适合网页使用</li>
+</ul>
+</li>
+<li><p><strong>无损 vs 有损：</strong></p>
+<ul>
+<li>无损：保持原始质量，文件较大</li>
+<li>有损：较小文件，适合大多数用途</li>
+</ul>
+</li>
+<li><p><strong>建议操作流程：</strong></p>
+<ul>
+<li>先备份重要图片</li>
+<li>使用默认设置测试转换效果</li>
+<li>根据需要调整质量参数</li>
+</ul>
+</li>
+</ol>
+<h2 id="❗-注意事项"><a href="#❗-注意事项" class="headerlink" title="❗ 注意事项"></a>❗ 注意事项</h2><ul>
+<li>转换前请备份重要图片</li>
+<li>WebP格式在某些老版本软件中可能不被支持</li>
+<li>转换过程中请勿关闭程序窗口</li>
+</ul>
